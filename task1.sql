@@ -32,6 +32,7 @@ GROUP BY c1.name;
 SELECT c1.name AS "customer_name", count(c2.id) AS "Count"
 FROM customers c1
 JOIN customers c2 ON c1.id = c2.referred_by
-GROUP BY c1.name;
+GROUP BY c1.name
+HAVING count(c2.id) >= 1;
 
 
